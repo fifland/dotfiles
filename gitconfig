@@ -1,0 +1,40 @@
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[color "diff"]
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
+
+[user]
+  email = Felix.Muenscher@mni.thm.de
+  name = Felix Münscher
+
+[editor]
+  editor = vim
+
+[alias]
+  f = fetch --all --prune
+  br = branch
+  co = checkout
+  df = diff
+  s = status
+  ss = status --short --branch
+  c = commit
+  l = log
+  a = add
+  bra = branch -av
+  ap = add --patch
+  ll = log --graph --abbrev-commit
+  llc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  rr = reset --hard
+  pl = pull
+  ps = push
+  plom = pull origin master
+  psom = push origin master
+  amend = commit --amend --no-edit
+  patch = add --patch
+  merged = branch --merged

@@ -1,0 +1,2 @@
+(package-install 'spacemacs-dark)
+(setq prelude-theme 'spacemacs-dark)
