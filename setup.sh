@@ -27,7 +27,7 @@ ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
 read -r -p "Install Pikaur? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo sh install/pikaur.sh
+        sh install/pikaur.sh
         ;;
     *)
         echo "Skipping..."

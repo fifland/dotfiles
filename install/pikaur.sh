@@ -4,7 +4,7 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
     exit
 fi
 
-pacman -S --noconfirm --needed base-devel git
+sudo pacman -S --noconfirm --needed base-devel git
 git clone https://aur.archlinux.org/pikaur.git
 
 
