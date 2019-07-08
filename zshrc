@@ -10,10 +10,7 @@ bindkey -e
 
 function install_antigen {
   echo "Install Antigen"
-	if uname -r | grep ARCH &> /dev/null; then
-		echo "Arch based system detected, try to install antigen from aur..."
-		yaourt -S antigen-git
-	elif where opkg &> /dev/null; then
+	if where opkg &> /dev/null; then
 		echo "OPKG based system detected, install curl and git with opkg, then install antigen with fallback..."
 		opkg install curl
 		opkg install git
