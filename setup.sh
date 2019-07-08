@@ -68,7 +68,7 @@ esac
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo sed 's/bash$/zsh/g' /etc/passwd
+        sudo sed -i -e 's/bash$/zsh/g' /etc/passwd
         ;;
     *)
         echo "Skipping..."
