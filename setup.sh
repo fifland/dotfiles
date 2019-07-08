@@ -15,6 +15,7 @@ rm -r ~/.vim
 mv ~/vim ~/.vim
 
 echo "Setting up: prelude"
+mkdir ~/.emacs.d/personal
 ln -s $current/emacs_personal ~/.emacs.d/personal
 
 echo "Setting up: sbt plugins"
