@@ -1,7 +1,14 @@
 #!/bin/bash
-sudo pacman -S --noconfirm --needed base-devel git
+if [ $(/usr/bin/id -u) -ne 0 ]; then
+    echo "Not running with sudo"
+    exit
+fi
+
+pacman -S --noconfirm --needed base-devel git
 git clone https://aur.archlinux.org/pikaur.git
+
+
 cd pikaur
 makepkg -fsri --noconfirm
 cd ..
-rm -f pikaur
+rm -rf pikaur

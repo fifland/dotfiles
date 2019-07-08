@@ -28,26 +28,11 @@ pacman_packages=(
   teamspeak3
   )
 
-aur_packages=(
-  google-chrome
-  drawio-desktop
-  insync
-  jdk
-  javafx11-scenebuilder
-  jetbrains-toolbox
-  rbenv
-  ruby-build
-  spotify
-  )
+
 
 pacman -Sy #update db
 
 for package in ${pacman_packages[@]};
 do
   pacman -S --needed --noconfirm $package
-done;
-
-for package in ${aur_packages[@]};
-do
-  pikaur -S --noconfirm $package
 done;
