@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ $(/usr/bin/id -u) -ne 0 ]; then
+    echo "Not running with sudo"
+    exit
+fi
+
 aur_packages=(
   google-chrome
   drawio-desktop

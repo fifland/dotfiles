@@ -27,7 +27,7 @@ ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
 read -r -p "Install Pikaur? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sh install/pikaur.sh
+        sudo sh install/pikaur.sh
         ;;
     *)
         echo "Skipping..."
@@ -37,7 +37,7 @@ esac
 read -r -p "Install Pacman Packages? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sh install/most.sh
+        sudo sh install/most.sh
         ;;
     *)
         echo "Skipping..."
@@ -47,7 +47,7 @@ esac
 read -r -p "Install AUR Packages? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sh install/aur.sh
+        sudo sh install/aur.sh
         ;;
     *)
         echo "Skipping..."
