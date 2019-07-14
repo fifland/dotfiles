@@ -28,11 +28,11 @@ apt_packages=(
 
 
 
-apt update #update db
+apt-get update #update db
 
 for package in ${apt_packages[@]};
 do
-  apt install -y $package
+  apt-get install -y $package
 done;
 
 # Ruby
