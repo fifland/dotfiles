@@ -25,37 +25,27 @@ ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
 read -r -p "Install zsh? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo pacman -Sy zsh
+        sudo apt install zsh
         ;;
     *)
         echo "Skipping..."
         ;;
 esac
 
-read -r -p "Install Pikaur? [y/N] " response
+read -r -p "Install APT Packages? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sh install/pikaur.sh
+        sudo sh install/apt.sh
         ;;
     *)
         echo "Skipping..."
         ;;
 esac
 
-read -r -p "Install Pacman Packages? [y/N] " response
+read -r -p "Install Docker? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo sh install/pacman.sh
-        ;;
-    *)
-        echo "Skipping..."
-        ;;
-esac
-
-read -r -p "Install AUR Packages? [y/N] " response
-case "$response" in
-    [yY][eE][sS]|[yY])
-        sudo sh install/aur.sh
+        sudo sh install/docker-apt.sh
         ;;
     *)
         echo "Skipping..."
