@@ -68,7 +68,11 @@ esac
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo sed -i -e 's/bash$/zsh/g' /etc/passwd
+        if which fish &> /dev/null; then
+            sudo sed -i -e 's/bash$/zsh/g' /etc/passwd
+        else
+            echo "zsh is not installed! Please it install first"
+        fi
         ;;
     *)
         echo "Skipping..."
