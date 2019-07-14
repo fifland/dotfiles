@@ -25,7 +25,7 @@ ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
 read -r -p "Install zsh? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo apt install zsh
+        sudo apt-get install -y zsh
         ;;
     *)
         echo "Skipping..."
