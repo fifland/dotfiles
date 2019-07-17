@@ -35,9 +35,11 @@ do
   apt-get install -y $package
 done;
 
+current=$(pwd)
 # Ruby
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-( cd ~/.rbenv && src/configure && make -C src )
+cd ~/.rbenv && src/configure && make -C src
+cd $pwd
 ~/.rbenv/bin/rbenv init
 
 mkdir -p "$(rbenv root)"/plugins
