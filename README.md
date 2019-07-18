@@ -38,9 +38,7 @@ On Arch the folowing software will be installed:
 * Teamspeak3
 
 #### AUR
-* Pikaur as AUR helper
-
-
+To simplify the use of the Arch Uuer Repositories, `pikaur` dan be installed. If so, the folowing AUR Packages can be installed:
 * Google Chrome
 * rbenv + ruby-build
 * Oracle Java JDK + JFX Scenebuilder

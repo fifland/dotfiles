@@ -32,7 +32,7 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Install Pikaur? [y/N] " response
+read -r -p "Install Pikaur? (AUR Helper) [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
         sh install/pikaur.sh
