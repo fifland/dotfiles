@@ -1,9 +1,9 @@
 current=$(pwd)
 
-echo "Setting up: zsh"
+echo "Setting up: zshrc"
 ln -sf $current/zshrc ~/.zshrc
 
-echo "Setting up: git"
+echo "Setting up: gitconfig"
 ln -sf $current/gitconfig ~/.gitconfig
 
 echo "Setting up: vim"
