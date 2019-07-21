@@ -193,3 +193,4 @@ fi
 
 # Thanks To CS :laughing:
 alias hosenschlange37=python3
+alias yolo='git push --force'
