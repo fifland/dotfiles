@@ -8,6 +8,8 @@ apm install minimap
 apm install project-manager
 apm install ensime
 
+apm install sublime-style-column-selection
+
 #language support
 apm install language-latex
 apm install language-scala
