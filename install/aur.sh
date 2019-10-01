@@ -7,7 +7,6 @@ fi
 aur_packages=(
   google-chrome
   drawio-desktop
-  insync
   jdk
   javafx11-scenebuilder
   jetbrains-toolbox
