@@ -1,5 +1,16 @@
 current=$(pwd)
 
+read -p 'Full Name: ' uservar
+read -p 'E-Mail Adress: ' mailvar
+
+sed -i "s/<USER>/$uservar/g" ./gitconfig
+sed -i "s/<MAIL>/$mailvar/g" ./gitconfig
+
+echo "Full Name: $uservar"
+echo "Mail Address: $mailvar"
+
+read -p "Correct? Press [Enter] key to continue..."
+
 echo "Setting up: zshrc"
 ln -sf $current/zshrc ~/.zshrc
 
