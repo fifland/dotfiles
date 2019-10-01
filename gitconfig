@@ -10,8 +10,8 @@
   new = green
 
 [user]
-  email = Felix.Muenscher@mni.thm.de
-  name = Felix Münscher
+  email = <MAIL>
+  name = <USER>
 
 [editor]
   editor = vim
