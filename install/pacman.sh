@@ -31,6 +31,7 @@ pacman_packages=(
   gradle
   telegram-desktop
   teamspeak3
+  gimp
   )
 
 

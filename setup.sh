@@ -63,7 +63,11 @@ esac
 read -r -p "Install AUR Packages? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo sh install/aur.sh
+        if which pikaur &> /dev/null; then
+            sudo sh install/aur.sh
+        else
+            echo "Pikaur is not installed! Please install it first"
+        fi
         ;;
     *)
         echo "Skipping..."
@@ -80,15 +84,29 @@ case "$response" in
         ;;
 esac
 
+read -r -p "Install Insync (Google Drive Sync Client)? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        if which pikaur &> /dev/null; then
+            sudo pikaur -S --noconfirm insync
+        else
+            echo "Pikaur is not installed! Please install it first"
+        fi
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
+
 
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        if which fish &> /dev/null; then
+        if which zsh &> /dev/null; then
             #sudo sed -i -e 's/bash$/zsh/g' /etc/passwd
             chsh -s /bin/zsh
         else
-            echo "zsh is not installed! Please it install first"
+            echo "zsh is not installed! Please install it first"
         fi
         ;;
     *)

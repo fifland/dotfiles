@@ -96,9 +96,9 @@ function battery {
   if [[ $cap -gt 15 ]] && [[ $cap -lt 50 ]]; then color="yellow"; fi
   if [[ $cap -ge 50 ]]; then color="green"; fi
   rprompt="%F{$color}$cap"
-  if [ "$adapter" = "discharging" ]; then 
+  if [ "$adapter" = "discharging" ]; then
     rprompt="$rprompt%%%f";
-  else 
+  else
     rprompt="$rprompt%f%F{yellow}↯%f";
   fi
   echo $rprompt
@@ -169,7 +169,7 @@ if [ "$XDG_SESSION_DESKTOP" = "gnome" ]; then
 fi
 
 function rsync {
-  
+
   if [ -f ./.rsyncignore ]; then
     /usr/bin/rsync --progress --partial -hr --exclude-from=./.rsyncignore $@
   else
@@ -191,6 +191,6 @@ if where pyenv &>/dev/null; then
 	eval "$(pyenv virtualenv-init -)"
 fi
 
-# Thanks To CS :laughing:
+# Thanks to Christopher Schölzel :laughing:
 alias hosenschlange37=python3
 alias yolo='git push --force'

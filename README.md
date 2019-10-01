@@ -4,17 +4,18 @@
 ## What's inside?
 
 * Install scripts for Arch and Debian based systems
+  * Pacman and AUR packages
 * `.zshrc` Config file for the Zsh
 * `.gitconfig` Config file for git
-* `.vimrc` and `vim` Advanced config files for git
+* `.vimrc` and `vim` Advanced config files for vim
 * SBT Plugin configuration files
-* Emacs confic with Prelude
+* Emacs config with Prelude
 
 ## Install Scripts
 The install scripts can be used to install frequently used software.
 On Arch everything useful for a desktop system is installed.
 
-The Debian installer is mostly targeted on Debain and Ubuntu server installations, though nothing requireing an X-Server is installed
+The Debian installer is mostly targeted on Debain and Ubuntu server installations, therefore nothing requiring an X-Server is installed
 
 ### Arch
 On Arch the folowing software will be installed:
@@ -59,6 +60,11 @@ The script then runns as follóws:
 ```
 ~/.dotfiles# ./setup.sh
 
+Full Name:
+E-Mail Adress:
+
+Correct? Press [Enter] key to continue...
+
 Setting up: zshrc
 Setting up: gitconfig
 Setting up: vim
@@ -74,6 +80,8 @@ Install Pacman Packages? [y/N]
 Install AUR Packages? [y/N]
 ...
 Install Atom Packages? [y/N]
+...
+Install Insync (Google Drive Sync Client)? [y/N]
 ...
 Set zsh default? [y/N]
 ...
