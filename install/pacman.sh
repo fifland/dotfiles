@@ -32,6 +32,7 @@ pacman_packages=(
   telegram-desktop
   teamspeak3
   gimp
+  plasma-browser-integration
   )
 
 

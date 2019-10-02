@@ -13,6 +13,7 @@ aur_packages=(
   rbenv
   ruby-build
   spotify
+  slack-desktop
   )
 
 pikaur -Sy
