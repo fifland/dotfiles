@@ -1,9 +1,17 @@
 current=$(pwd)
 
-echo "Setting up: zsh"
+read -p 'Full Name: ' uservar
+read -p 'E-Mail Adress: ' mailvar
+
+read -p "Correct? Press [Enter] key to continue..."
+
+sed -i "s/<USER>/$uservar/g" ./gitconfig
+sed -i "s/<MAIL>/$mailvar/g" ./gitconfig
+
+echo "Setting up: zshrc"
 ln -sf $current/zshrc ~/.zshrc
 
-echo "Setting up: git"
+echo "Setting up: gitconfig"
 ln -sf $current/gitconfig ~/.gitconfig
 
 echo "Setting up: vim"
