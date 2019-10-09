@@ -5,7 +5,7 @@ read -p 'E-Mail Adress: ' mailvar
 
 read -p "Correct? Press [Enter] key to continue..."
 
-sed -i "s/<USER>/$uservar/g" ./gitconfig
+sed "s/<USER>/$uservar/g" ./gitconfig_blueprint > ./gitconfig
 sed -i "s/<MAIL>/$mailvar/g" ./gitconfig
 
 echo "Setting up: zshrc"
