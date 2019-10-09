@@ -1,3 +1,4 @@
+#!/bin/bash
 read -p 'Full Name: ' uservar
 read -p 'E-Mail Adress: ' mailvar
 

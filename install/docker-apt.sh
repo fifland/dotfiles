@@ -1,3 +1,4 @@
+#!/bin/bash
 apt-get remove -y docker docker-engine docker.io containerd runc
 apt-get install -y \
     apt-transport-https \

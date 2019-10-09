@@ -1,3 +1,4 @@
+#!/bin/bash
 current=$(pwd)
 
 echo "Setup-Script Started"
