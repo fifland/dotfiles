@@ -33,6 +33,12 @@ pacman_packages=(
   teamspeak3
   gimp
   plasma-browser-integration
+  python-pygments
+  pygmentize
+  wavemon
+  unzip
+  pandoc
+  plantuml
   )
 
 
