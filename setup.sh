@@ -96,6 +96,19 @@ case "$response" in
         ;;
 esac
 
+read -r -p "Install Spotify? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        if which pikaur &> /dev/null; then
+            sudo pikaur -S --noconfirm spotify
+        else
+            echo "Pikaur is not installed! Please install it first"
+        fi
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
 
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in

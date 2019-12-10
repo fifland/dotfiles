@@ -12,7 +12,6 @@ aur_packages=(
   jetbrains-toolbox
   rbenv
   ruby-build
-  spotify
   slack-desktop
   )
 
