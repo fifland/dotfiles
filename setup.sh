@@ -28,6 +28,9 @@ sbt_plugins_path=~/.sbt/1.0/plugins
 mkdir -p $sbt_plugins_path
 ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
 
+echo "Starting full system update"
+sudo pacman --noconfirm -Syyu
+
 read -r -p "Install zsh? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
