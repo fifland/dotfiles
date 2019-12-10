@@ -10,9 +10,12 @@ apm install ensime
 
 apm install sublime-style-column-selection
 
+apm install ide-docker
+
 #language support
 apm install language-latex
 apm install language-scala
+apm install language docker
 
 #themes
 apm install tomorrow
