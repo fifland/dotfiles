@@ -22,6 +22,11 @@ pacman_packages=(
   htop
   docker
   docker-compose
+  jre-openjdk-headless
+  jre-openjdk
+  jdk-openjdk
+  openjdk-doc
+  openjdk-src
   ruby
   python
   scala
@@ -29,9 +34,6 @@ pacman_packages=(
   scala-sources
   sbt
   gradle
-  telegram-desktop
-  teamspeak3
-  gimp
   plasma-browser-integration
   python-pygments
   pygmentize

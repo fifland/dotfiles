@@ -61,11 +61,35 @@ case "$response" in
         ;;
 esac
 
+read -r -p "Install Pacman non essential Packages? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        sudo sh install/pacman_nonessential.sh
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
+
 read -r -p "Install AUR Packages? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
             sudo sh install/aur.sh
+        else
+            echo "Pikaur is not installed! Please install it first"
+        fi
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
+
+read -r -p "Install non essential AUR Packages? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        if which pikaur &> /dev/null; then
+            sudo sh install/aur_nonessential.sh
         else
             echo "Pikaur is not installed! Please install it first"
         fi

@@ -5,10 +5,9 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
 fi
 
 aur_packages=(
-  google-chrome
-  jetbrains-toolbox
-  rbenv
-  ruby-build
+  drawio-desktop
+  javafx11-scenebuilder
+  slack-desktop
   )
 
 pikaur -Sy
