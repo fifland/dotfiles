@@ -151,3 +151,13 @@ case "$response" in
         echo "Skipping..."
         ;;
 esac
+
+read -r -p "Increase Inotify Watches Limit? [y/N]" response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        sudo sh bin/increase_inotify_watches.sh
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
