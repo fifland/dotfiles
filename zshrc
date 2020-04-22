@@ -191,6 +191,8 @@ if where pyenv &>/dev/null; then
 	eval "$(pyenv virtualenv-init -)"
 fi
 
+alias dcp=docker-compose
+
 # Thanks to Christopher Schölzel :laughing:
 alias hosenschlange37=python3
 alias yolo='git push --force'
