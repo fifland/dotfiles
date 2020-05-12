@@ -68,7 +68,7 @@ esac
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        if which fish &> /dev/null; then
+        if which zsh &> /dev/null; then
             #sudo sed -i -e 's/bash$/zsh/g' /etc/passwd
             chsh -s /bin/zsh
         else
