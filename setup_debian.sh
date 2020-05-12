@@ -74,6 +74,16 @@ case "$response" in
         ;;
 esac
 
+read -r -p "Install VMWare Tools? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        apt-get install open-vm-tools
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
+
 
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in
