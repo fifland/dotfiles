@@ -64,6 +64,16 @@ case "$response" in
         ;;
 esac
 
+read -r -p "Install Firewall (IPtables & Ferm)? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        sh install/firewall_deb.sh
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
+
 
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in
