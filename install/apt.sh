@@ -4,36 +4,10 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
     exit
 fi
 
-apt_packages=(
-  vim
-  wkhtmltopdf
-  git
-  curl
-  tree
-  htop
-  sbt
-  gradle
-  autoconf
-  bison
-  build-essential
-  libssl-dev
-  libyaml-dev
-  libreadline6-dev
-  zlib1g-dev
-  libncurses5-dev
-  libffi-dev
-  libgdbm5
-  libgdbm-dev
-  )
-
-
-
 apt-get update #update db
 
-for package in ${apt_packages[@]};
-do
-  apt-get install -y $package
-done;
+apt-get install -y vim htop git curl build-essential
+
 
 current=$(pwd)
 # Ruby

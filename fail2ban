@@ -1,0 +1,23 @@
+#
+# in /etc/fail2ban/jail.local.
+#
+# Optionally you may override any other parameter (e.g. banaction,
+# action, port, logpath, etc) in that section within jail.local
+[ssh]
+enabled  = false
+[sshd]
+enabled  = false
+[ssh-perm]
+enabled	 = true
+port	 = ssh
+filter 	 = sshd
+logpath  = /var/log/auth.log
+findtime = 7200
+maxretry = 7
+bantime  = -1
+[ssh-ddos]
+enabled  = true
+port     = ssh
+filter   = sshd-ddos
+logpath  = /var/log/auth.log
+maxretry = 6

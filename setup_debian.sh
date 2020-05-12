@@ -58,16 +58,6 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Install Atom Packages? [y/N] " response
-case "$response" in
-    [yY][eE][sS]|[yY])
-        sh install/atom.sh
-        ;;
-    *)
-        echo "Skipping..."
-        ;;
-esac
-
 
 read -r -p "Set zsh default? [y/N] " response
 case "$response" in
