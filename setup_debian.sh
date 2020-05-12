@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if [ $(/usr/bin/id -u) -ne 0 ]; then
+    echo "Not running with sudo"
+    exit
+fi
+
 current=$(pwd)
 
 echo "Setup-Script Started"
@@ -31,7 +37,7 @@ ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
 read -r -p "Install zsh? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo apt-get install -y zsh
+        apt-get install -y zsh
         ;;
     *)
         echo "Skipping..."
@@ -41,7 +47,7 @@ esac
 read -r -p "Install APT Packages? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo sh install/apt.sh
+        sh install/apt.sh
         ;;
     *)
         echo "Skipping..."
@@ -51,7 +57,7 @@ esac
 read -r -p "Install Docker? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sudo sh install/docker-apt.sh
+        sh install/docker-apt.sh
         ;;
     *)
         echo "Skipping..."
