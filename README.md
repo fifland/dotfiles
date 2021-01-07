@@ -44,9 +44,11 @@ To simplify the use of the Arch User Repositories, `pikaur` can be installed. If
 * rbenv + ruby-build
 * Oracle Java JDK + JFX Scenebuilder
 * Jetbrains Toolbox
-* Insync - Goole Drive Client
 * Drawio
 * Spotify
+
+#### Optional
+* Insync - Goole Drive Client
 
 
 ## Usage
