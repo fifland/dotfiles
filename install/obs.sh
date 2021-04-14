@@ -4,15 +4,23 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
     exit
 fi
 
+pacman_packages=(
+  obs-studio
+  )
+
+pacman -Sy #update db
+
+for package in ${pacman_packages[@]};
+do
+  pacman -S --needed --noconfirm $package
+done;
+
+
+
 aur_packages=(
-  drawio-desktop
-  javafx11-scenebuilder
-  slack-desktop
-  zoom
-  anydesk-bin
-  eagle
-  ddrescue-gui
-  edex-ui-bin
+  obs-freeze-filter
+  obs-streamfx
+  obs-v4l2sink
   )
 
 pikaur -Sy

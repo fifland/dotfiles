@@ -192,6 +192,7 @@ if where pyenv &>/dev/null; then
 fi
 
 alias dcp=docker-compose
+alias socker=docker
 
 # Thanks to Christopher Schölzel :laughing:
 alias hosenschlange37=python3

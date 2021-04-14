@@ -114,6 +114,7 @@ case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
             sudo pikaur -S --noconfirm insync
+            sudo pikaur -S --noconfirm insync-dolphin
         else
             echo "Pikaur is not installed! Please install it first"
         fi
@@ -128,6 +129,34 @@ case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
             sudo pikaur -S --noconfirm spotify
+        else
+            echo "Pikaur is not installed! Please install it first"
+        fi
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
+
+read -r -p "Install CKB-Next Corsair Driver? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        if which pikaur &> /dev/null; then
+            sudo pikaur -S --noconfirm ckb-next
+        else
+            echo "Pikaur is not installed! Please install it first"
+        fi
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
+
+read -r -p "Install OBS? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        if which pikaur &> /dev/null; then
+            sudo sh install/obs.sh
         else
             echo "Pikaur is not installed! Please install it first"
         fi

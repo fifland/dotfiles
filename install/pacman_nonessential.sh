@@ -9,6 +9,7 @@ pacman_packages=(
   teamspeak3
   gimp
   kdenlive
+  element-desktop
   )
 
 
