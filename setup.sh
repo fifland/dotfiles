@@ -128,7 +128,7 @@ read -r -p "Install Spotify? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
-            sudo pikaur -S --noconfirm spotify
+            sudo pikaur -S spotify
         else
             echo "Pikaur is not installed! Please install it first"
         fi
