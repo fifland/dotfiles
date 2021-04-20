@@ -5,7 +5,6 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
 fi
 
 pacman_packages=(
-  linux-headers
   obs-studio
   v4l2loopback-dkms
   )
@@ -16,6 +15,8 @@ for package in ${pacman_packages[@]};
 do
   pacman -S --needed --noconfirm $package
 done;
+
+pacman -S linux-headers
 
 
 aur_packages=(
