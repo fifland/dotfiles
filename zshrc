@@ -52,6 +52,7 @@ antigen bundle pip
 antigen bundle rails
 antigen bundle systemd
 antigen bundle docker
+antigen bundle kubectl
 antigen bundle docker-compose
 antigen bundle scala
 antigen bundle sbt
