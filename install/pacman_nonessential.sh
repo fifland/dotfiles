@@ -7,7 +7,6 @@ fi
 pacman_packages=(
   telegram-desktop
   teamspeak3
-  gimp
   kdenlive
   element-desktop
   )

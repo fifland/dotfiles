@@ -31,7 +31,7 @@ ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
 echo "Starting full system update"
 sudo pacman --noconfirm -Syyu
 
-read -r -p "Install zsh? [y/N] " response
+read -r -p "Install zsh? [y/N] (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
         sudo pacman --noconfirm -Sy zsh
@@ -41,7 +41,7 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Install Pikaur? (AUR Helper) [y/N] " response
+read -r -p "Install Pikaur? (AUR Helper) [y/N] (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
         sh install/pikaur.sh
@@ -51,7 +51,7 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Install Pacman Packages? [y/N] " response
+read -r -p "Install Pacman Packages? [y/N] (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
         sudo sh install/pacman.sh
@@ -71,7 +71,7 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Install AUR Packages? [y/N] " response
+read -r -p "Install AUR Packages? [y/N] (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
@@ -109,12 +109,12 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Install Insync (Google Drive Sync Client)? [y/N] " response
+read -r -p "Install Insync (Google Drive & OneDrive Sync Client)? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
-            sudo pikaur -S --noconfirm insync
-            sudo pikaur -S --noconfirm insync-dolphin
+            sudo pikaur -Sy --noconfirm insync
+            sudo pikaur -Sy --noconfirm insync-dolphin
         else
             echo "Pikaur is not installed! Please install it first"
         fi
@@ -142,7 +142,7 @@ read -r -p "Install CKB-Next Corsair Driver? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
-            sudo pikaur -S --noconfirm ckb-next
+            sudo pikaur -Sy --noconfirm ckb-next
         else
             echo "Pikaur is not installed! Please install it first"
         fi
@@ -166,7 +166,7 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Set zsh default? [y/N] " response
+read -r -p "Set zsh default? [y/N]  (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
         if which zsh &> /dev/null; then
@@ -181,7 +181,7 @@ case "$response" in
         ;;
 esac
 
-read -r -p "Increase Inotify Watches Limit? [y/N]" response
+read -r -p "Increase Inotify Watches Limit? [y/N]  (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
         sudo sh bin/increase_inotify_watches.sh

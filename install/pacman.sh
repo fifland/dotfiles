@@ -10,11 +10,13 @@ pacman_packages=(
   vlc
   vim
   atom
+  nano
   texlive-most
   texlive-lang
   biber
   hunspell-de
   inkscape
+  gimp
   wkhtmltopdf
   git
   curl
