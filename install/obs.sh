@@ -22,17 +22,16 @@ pacman -S linux-headers
 aur_packages=(
   obs-freeze-filter
   obs-streamfx
-  obs-v4l2sink
   )
 
-pikaur -Sy
+yay -Sy
 
 for package in ${aur_packages[@]};
 do
-  if which pikaur &> /dev/null; then
-      sudo pikaur -S --noconfirm $package
+  if which yay &> /dev/null; then
+      sudo yay -S --noconfirm $package
   else
-      echo "Pikaur is not installed! Please install it first"
+      echo "yay is not installed! Please install it first"
   fi
 done;
 

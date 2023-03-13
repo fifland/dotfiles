@@ -15,13 +15,13 @@ aur_packages=(
   edex-ui-bin
   )
 
-pikaur -Sy
+yay -Sy
 
 for package in ${aur_packages[@]};
 do
-  if which pikaur &> /dev/null; then
-      sudo pikaur -S --noconfirm $package
+  if which yay &> /dev/null; then
+      sudo yay -S --noconfirm $package
   else
-      echo "Pikaur is not installed! Please install it first"
+      echo "yay is not installed! Please install it first"
   fi
 done;

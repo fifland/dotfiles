@@ -12,22 +12,6 @@ ln -sf $current/zshrc ~/.zshrc
 echo "Setting up: gitconfig"
 ln -sf $current/gitconfig ~/.gitconfig
 
-echo "Setting up: vim"
-ln -sf $current/vimrc ~/.vimrc
-cp -r $current/vim ~/vim
-rm -r ~/.vim
-mv ~/vim ~/.vim
-
-echo "Setting up: prelude"
-mkdir ~/.emacs.d
-mkdir ~/.emacs.d/personal
-ln -s $current/emacs_personal ~/.emacs.d/personal
-
-echo "Setting up: sbt plugins"
-sbt_plugins_path=~/.sbt/1.0/plugins
-mkdir -p $sbt_plugins_path
-ln -sf $current/sbt/plugins.sbt $sbt_plugins_path/plugins.sbt
-
 echo "Starting full system update"
 sudo pacman --noconfirm -Syyu
 
@@ -44,7 +28,7 @@ esac
 read -r -p "Install Yay? (AUR Helper) [y/N] (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        sh install/yay.sh
+        sudo pacman --noconfirm -Sy yay
         ;;
     *)
         echo "Skipping..."
@@ -74,10 +58,10 @@ esac
 read -r -p "Install AUR Packages? [y/N] (recommended) " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        if which pikaur &> /dev/null; then
+        if which yay &> /dev/null; then
             sudo sh install/aur.sh
         else
-            echo "Pikaur is not installed! Please install it first"
+            echo "yay is not installed! Please install it first"
         fi
         ;;
     *)
@@ -88,21 +72,11 @@ esac
 read -r -p "Install non essential AUR Packages? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        if which pikaur &> /dev/null; then
+        if which yay &> /dev/null; then
             sudo sh install/aur_nonessential.sh
         else
-            echo "Pikaur is not installed! Please install it first"
+            echo "yay is not installed! Please install it first"
         fi
-        ;;
-    *)
-        echo "Skipping..."
-        ;;
-esac
-
-read -r -p "Install Atom Packages? [y/N] " response
-case "$response" in
-    [yY][eE][sS]|[yY])
-        sh install/atom.sh
         ;;
     *)
         echo "Skipping..."
@@ -113,10 +87,10 @@ read -r -p "Install Insync (Google Drive & OneDrive Sync Client)? [y/N] " respon
 case "$response" in
     [yY][eE][sS]|[yY])
         if which pikaur &> /dev/null; then
-            sudo pikaur -Sy --noconfirm insync
-            sudo pikaur -Sy --noconfirm insync-dolphin
+            sudo yay -Sy --noconfirm insync
+            sudo yay -Sy --noconfirm insync-dolphin
         else
-            echo "Pikaur is not installed! Please install it first"
+            echo "yay is not installed! Please install it first"
         fi
         ;;
     *)
@@ -127,10 +101,10 @@ esac
 read -r -p "Install Spotify? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        if which pikaur &> /dev/null; then
-            sudo pikaur -S spotify
+        if which yay &> /dev/null; then
+            sudo yay -S spotify
         else
-            echo "Pikaur is not installed! Please install it first"
+            echo "yay is not installed! Please install it first"
         fi
         ;;
     *)
@@ -141,10 +115,10 @@ esac
 read -r -p "Install CKB-Next Corsair Driver? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        if which pikaur &> /dev/null; then
-            sudo pikaur -Sy --noconfirm ckb-next
+        if which yay &> /dev/null; then
+            sudo yay -Sy --noconfirm ckb-next
         else
-            echo "Pikaur is not installed! Please install it first"
+            echo "yay is not installed! Please install it first"
         fi
         ;;
     *)
@@ -155,10 +129,10 @@ esac
 read -r -p "Install OBS? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        if which pikaur &> /dev/null; then
+        if which yay &> /dev/null; then
             sudo sh install/obs.sh
         else
-            echo "Pikaur is not installed! Please install it first"
+            echo "yay is not installed! Please install it first"
         fi
         ;;
     *)
